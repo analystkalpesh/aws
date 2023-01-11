@@ -1,9 +1,7 @@
 import boto3
 from urllib.parse import unquote_plus
 
-
 def lambda_handler(event, context):
-    """Read file from s3 on trigger."""
     s3 = boto3.client("s3")
     if event:
         file_obj = event["Records"][0]
