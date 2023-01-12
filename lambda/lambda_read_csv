@@ -1,0 +1,16 @@
+import json
+import pandas as pd
+
+
+def lambda_handler(event, context):
+    # TODO implement
+    df =pd.read_csv("s3://sfbucketkp/input/data.csv")
+    #df1=pd.read_csv("s3://sfbucketkp/emp.csv")
+    print(df)
+    #print(df1)
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda!')
+    }
+
+#Use layer - pandas, fsspec, pytz
